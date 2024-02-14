@@ -9,10 +9,8 @@
     <h1>Skills I've Learned So Far</h1>
     <ul>
       <% skills.forEach(function(s){ %>
-      <li><%= s.skills %></li>
-      -
-      <%= s.proficient ? 'yes' : 'not yet' %>
-      <% }); %>
+      <li><%= s.skill %></li>
+      - <%= s.proficient ? 'yes' : 'not yet' %> <% }); %>
     </ul>
   </body>
 </html>
