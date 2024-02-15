@@ -8,6 +8,13 @@ function index(req, res) {
   });
 }
 
+function show(req, res) {
+  res.render("skills/show", {
+    skill: Skillz.getOne(req.params.id),
+  });
+}
+
 module.exports = {
   index,
+  show,
 };

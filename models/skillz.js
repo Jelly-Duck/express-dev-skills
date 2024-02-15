@@ -18,4 +18,10 @@ function getAll() {
 
 module.exports = {
   getAll,
+  getOne
 };
+
+function getOne(id) {
+  id = parseInt(id);
+  return skills.find(skill => skill.id === id);
+}
