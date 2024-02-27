@@ -8,9 +8,21 @@
   <body>
     <h1>Skills I've Learned So Far</h1>
     <ul>
-      <% skills.forEach(function(s){ %>
+      <% skills.forEach(function(s, i){ %>
       <li><a href="/skillz/<%= s.id %>"> <%= s.skill %></a></li>
-      - <%= s.proficient ? 'yes' : 'not yet' %> <% }); %>
+      - <%= s.proficient ? 'yes' : 'not yet' %>
+      <form action="/skillz/delete/<%= i %>?_method=DELETE" method="POST">
+        <input type="submit" value="delete" />
+      </form>
+      <% }); %>
     </ul>
+    <h2>Add a Skill:</h2>
+    <form action="/skillz/new" method="POST">
+      <label>New Skill: </label>
+      <input type="text" name="skill" />
+      <label>Proficient: </label>
+      <input type="checkbox" name="proficient" />
+      <input type="submit" />
+    </form>
   </body>
 </html>

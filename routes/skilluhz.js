@@ -11,4 +11,8 @@ router.get("/", skillsCtrl.index);
 
 router.get("/:id", skillsCtrl.show);
 
+router.post("/new", skillsCtrl.create);
+
+router.delete("/delete/:index", skillsCtrl.deleteSkill);
+
 module.exports = router;
